@@ -35,3 +35,19 @@ def desplegar_tablero(tablero):
             print(tablero[i][j], end =" ")
         print( )
 
+def crear_escondido(tablero):
+    tableroescondido =[]
+    for i in range(len(tablero)):
+        lista =[ ]
+        for j in range(len(tablero[i])):
+            lista.append("[]")
+        tableroescondido.append(lista)
+    
+    return tableroescondido
+
+
+
+prueba=crear_tablero(7)
+
+desplegar_tablero(prueba)
+desplegar_tablero(crear_escondido(prueba))
