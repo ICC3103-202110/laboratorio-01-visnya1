@@ -72,6 +72,19 @@ def clean(c1,c2,tableroescondido):
         tableroescondido[c1[0]-1][c1[1]-1]= "[]"
         tableroescondido[c1[0]-1][c1[1]-1]= "[]"
 
+def score(c1,c2,tablero, puntuación):
+    puntuacion +=1
+    return puntuación
+
+def change_player(jugador):
+    if jugador ==1:
+        jugador=2
+    else:
+        jugador =1
+    return jugador ****
+    
+       
+
 
 
 prueba=crear_tablero(7)
