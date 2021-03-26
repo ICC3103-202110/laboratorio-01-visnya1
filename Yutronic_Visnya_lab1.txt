@@ -9,16 +9,24 @@ def crear_tablero(n_cartas):
         lista.append(i+1)
         lista.append(i+1)
     random.shuffle(lista)
+
     A = round(math.sqrt(pares))
+
     if (pares%A) != 0:
-        while(pares%A) !=0:
+        while(pares%A) != 0:
             A = A - 1
+
+    c1=0
+    c2=int(pares/A)
 
     for i in range(0,A):
         lista2 = [ ]
-        for j in range(0,pares/A):
+        for j in range(c1,c2):
             lista2.append(lista[j])
         tablero.append(lista2)
+        c1 = c1 + int(pares/A)
+        c2 = c2 + int(pares/A)
+
     return tablero
 
 print(crear_tablero(6))
