@@ -22,14 +22,16 @@ def crear_tablero(n_cartas):
     for i in range(0,A):
         lista2 = [ ]
         for j in range(c1,c2):
-            lista2.append(lista[j])
+            lista2.append  (lista[j])
         tablero.append(lista2)
         c1 = c1 + int(pares/A)
         c2 = c2 + int(pares/A)
 
     return tablero
 
-print(crear_tablero(6))
+def desplegar_tablero(tablero):
+    for i in range(len(tablero)):
+        for j in range(len(tablero[i])):
+            print(tablero[i][j], end =" ")
+        print( )
 
-
-a
