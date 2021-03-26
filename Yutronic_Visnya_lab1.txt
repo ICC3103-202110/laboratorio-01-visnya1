@@ -81,9 +81,28 @@ def change_player(jugador):
         jugador=2
     else:
         jugador =1
-    return jugador ****
-    
-       
+    return jugador 
+
+ ##CODIGO##
+
+ cards =int(input("Ingrese número de cartas a jugar: ")
+ jugador =1
+ puntos1=0
+ puntos2=0
+ tablero=crear_tablero(cards)
+ desplegar_tablero(tablero)
+ tableroescondido=crear_escondido(tablero)
+ print()
+ print("Las coordenadas se eligen en formato: n,m")
+ print()
+
+ while (puntos1+puntos2) < (cards-1):
+    desplegar_tablero(tableroescondido)
+    print()
+    a = input("Cual es la coordenada a elegir: ")
+    a =
+
+
 
 
 
