@@ -1,6 +1,8 @@
 import random
 import math
 
+##FUNCIONES###
+
 def crear_tablero(n_cartas):
     pares = 2 * n_cartas
     tablero = [ ]
@@ -76,7 +78,7 @@ def arreglo_coor(coordenadas):
     matriz =[int(coordenadas[0]), int(coordenadas[1])]
     return matriz
 
- ##CODIGO##
+ ###CODIGO###
 
  cards =int(input("Ingrese número de cartas a jugar: ")
  jugador =1
@@ -88,6 +90,8 @@ def arreglo_coor(coordenadas):
  print()
  print("Las coordenadas se eligen en formato: n,m")
  print()
+
+###INICIO DEL CICLO DE JUEGO###
 
  while (puntos1+puntos2) < (cards):
     desplegar_tablero(tableroescondido)
@@ -121,6 +125,8 @@ def arreglo_coor(coordenadas):
         jugador =1
     print("Turno jugador", jugador)
     print()
+
+###RESULTADO###
 
 if puntos1==puntos2:
     print("Es un empate!")
