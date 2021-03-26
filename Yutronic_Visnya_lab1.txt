@@ -15,6 +15,13 @@ def crear_tablero(n_cartas):
             A = A - 1
 
     for i in range(0,A):
+        lista2 = [ ]
         for j in range(0,pares/A):
+            lista2.append(lista[j])
+        tablero.append(lista2)
+    return tablero
+
+print(crear_tablero(6))
+
 
 a
