@@ -1,2 +1,20 @@
-Hola, hola prueba lab1
-chao
+import random
+import math
+
+def crear_tablero(n_cartas):
+    pares = 2 * n_cartas
+    tablero = [ ]
+    lista = [ ]
+    for i in range(0,n_cartas):
+        lista.append(i+1)
+        lista.append(i+1)
+    random.shuffle(lista)
+    A = round(math.sqrt(pares))
+    if (pares%A) != 0:
+        while(pares%A) !=0:
+            A = A - 1
+
+    for i in range(0,A):
+        for j in range(0,pares/A):
+
+a
