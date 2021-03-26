@@ -47,15 +47,14 @@ def crear_escondido(tablero):
 
 def validar_coord(c,tablero):
     c = c.split(",")
-    A=int(c[0])
-    B=int(c[1])
+    A=int(c[0])-1
+    B=int(c[1])-1
     if A < 0 or A > len(tablero[0])-1 or B < 0 or B >len(tablero)-1:
         return False
     return True
 
 def movimiento_jugador(c, tablero,tableroescondido):
     i= validar_coord(c,tablero)
-    c= c.cplit(",")
     A=int(c[0])
     B= int(c[1])
     if i==True:
@@ -65,23 +64,17 @@ def movimiento_jugador(c, tablero,tableroescondido):
         print("Invalid coordinates")
 
 def clean(c1,c2,tableroescondido):
-    if c1 == c2:
+    if tablero[c1[0]-1][c1[1]-1]==tablero[c2[0]-1][c2[1]-1]:
         tableroescondido[c1[0]-1][c1[1]-1]= " "   
         tableroescondido[c1[0]-1][c1[1]-1]= " "  
     else:
         tableroescondido[c1[0]-1][c1[1]-1]= "[]"
         tableroescondido[c1[0]-1][c1[1]-1]= "[]"
 
-def score(c1,c2,tablero, puntuación):
-    puntuacion +=1
-    return puntuación
-
-def change_player(jugador):
-    if jugador ==1:
-        jugador=2
-    else:
-        jugador =1
-    return jugador 
+def arreglo_coor(coordenadas):
+    coordenadas = coordenadas.split(",")
+    matriz =[int(coordenadas[0]), int(coordenadas[1])]
+    return matriz
 
  ##CODIGO##
 
@@ -96,18 +89,50 @@ def change_player(jugador):
  print("Las coordenadas se eligen en formato: n,m")
  print()
 
- while (puntos1+puntos2) < (cards-1):
+ while (puntos1+puntos2) < (cards):
     desplegar_tablero(tableroescondido)
     print()
     a = input("Cual es la coordenada a elegir: ")
-    a =
+    a = arreglo_coor(a)
+    movimiento_jugador(a,tablero,tableroescondido)
+    print()
+    desplegar_tablero(tableroescondido)
+    print()
+    b =input("Cual es la segunda coordenada a elegir: ")
+    b =arreglo_coor(b)
+    movimiento_jugador(b,tablero,tableroescondido)
+    print()
+    desplegar_tablero(tableroescondido)
+    if tablero[a[0]-1][a[1]-1] ==tablero[b[0]-1][b[1]-1]]:
+        if jugador ==1:
+            puntos1 +=1
+            print("El jugador", jugador, "gano un punto, lleva", puntos1, "en total.")
+        else:
+            puntos2 +=1
+            print("El jugador", jugador, "gano un punto, lleva", puntos2, "en total.")
+    else:
+        print("Te equivocaste")   
+
+
+    clean(a,b,tableroescondido)
+    if jugador ==1:
+        jugador=2
+    else:
+        jugador =1
+    print("Turno jugador", jugador)
+    print()
+
+if puntos1==puntos2:
+    print("Es un empate!")
+elif puntos1< puntos2:
+    print("Gana jugador 2")
+else:
+    print("Gana jugador 1")    
 
 
 
 
 
-prueba=crear_tablero(7)
 
-desplegar_tablero(prueba)
-desplegar_tablero(crear_escondido(prueba))
+
 
