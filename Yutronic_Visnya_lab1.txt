@@ -78,22 +78,22 @@ def arreglo_coor(coordenadas):
     matriz =[int(coordenadas[0]), int(coordenadas[1])]
     return matriz
 
- ###CODIGO###
+###CODIGO###
 
- cards =int(input("Ingrese número de cartas a jugar: ")
- jugador =1
- puntos1=0
- puntos2=0
- tablero=crear_tablero(cards)
- desplegar_tablero(tablero)
- tableroescondido=crear_escondido(tablero)
- print()
- print("Las coordenadas se eligen en formato: n,m")
- print()
+cards =int(input("Ingrese número de cartas a jugar: "))
+jugador =1
+puntos1=0
+puntos2=0
+tablero=crear_tablero(cards)
+desplegar_tablero(tablero)
+tableroescondido=crear_escondido(tablero)
+print()
+print("Las coordenadas se eligen en formato: n,m")
+print()
 
 ###INICIO DEL CICLO DE JUEGO###
 
- while (puntos1+puntos2) < (cards):
+while (puntos1+puntos2) < (cards):
     desplegar_tablero(tableroescondido)
     print()
     a = input("Cual es la coordenada a elegir: ")
@@ -107,7 +107,7 @@ def arreglo_coor(coordenadas):
     movimiento_jugador(b,tablero,tableroescondido)
     print()
     desplegar_tablero(tableroescondido)
-    if tablero[a[0]-1][a[1]-1] ==tablero[b[0]-1][b[1]-1]]:
+    if tablero[a[0]-1][a[1]-1] ==tablero[b[0]-1][b[1]-1]:
         if jugador ==1:
             puntos1 +=1
             print("El jugador", jugador, "gano un punto, lleva", puntos1, "en total.")
